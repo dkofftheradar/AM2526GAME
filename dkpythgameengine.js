@@ -1,5 +1,4 @@
-// Backend game state manager for AM2526GAME
-// This module owns the state, scene data, navigation logic, win/loss checks, and restart/reset behavior.
+// Game state manager, scenes, navigation, win/loss logic
 
 const scenes = {
     start: {

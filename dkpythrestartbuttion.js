@@ -1,4 +1,3 @@
-// Restart button helper: reset all main game state back to the beginning
 let engineModule;
 let boxiModule;
 let inventoryModule;

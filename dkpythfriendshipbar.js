@@ -23,7 +23,6 @@ function decreaseFriendship(amount) {
     console.log(`Brian's friendship decreased to ${brianFriendship}.`);
 }
 
-// Function to get current friendship level
 function getFriendshipLevel() {
     return brianFriendship;
 }
@@ -32,17 +31,14 @@ function resetFriendship() {
     brianFriendship = 0;
 }
 
-// Function to check if Brian will betray the player (low friendship)
 function willBetray() {
     return brianFriendship < BETRAY_THRESHOLD;
 }
 
-// Function to check if Brian will fight by the player's side (high friendship)
 function isAlly() {
     return brianFriendship > ALLY_THRESHOLD;
 }
 
-// Function to get Brian's current status
 function getBrianStatus() {
     if (isAlly()) {
         return "Brian is your loyal ally and will fight by your side!";

@@ -1,4 +1,3 @@
-// Boxi player state and game state management
 const boxiState = {
     health: {
         current: 0,

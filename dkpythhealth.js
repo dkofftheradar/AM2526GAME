@@ -1,9 +1,7 @@
-// Player health tracking variables
-let maxHealth = 0; // Maximum health the player can have
-let currentHealth = 0; // Current health of the player
-let isAlive = true; // Boolean to check if the player is alive
+let maxHealth = 0;
+let currentHealth = 0;
+let isAlive = true;
 
-// Function to take damage
 function takeDamage(amount) {
     currentHealth = currentHealth - amount;
     if (currentHealth <= 0) {
@@ -13,7 +11,6 @@ function takeDamage(amount) {
     }
 }
 
-// Function to heal
 function heal(amount) {
     currentHealth = currentHealth + amount;
     if (currentHealth > maxHealth) {
@@ -21,7 +18,6 @@ function heal(amount) {
     }
 }
 
-// Function to check health status
 function getHealthStatus() {
     return {
         current: currentHealth,
