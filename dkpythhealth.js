@@ -1,6 +1,6 @@
 // Player health tracking variables
-let maxHealth = 100; // Maximum health the player can have
-let currentHealth = 100; // Current health of the player
+let maxHealth = 0; // Maximum health the player can have
+let currentHealth = 0; // Current health of the player
 let isAlive = true; // Boolean to check if the player is alive
 
 // Function to take damage

@@ -3,10 +3,16 @@ let inventory = []; // Array to hold inventory items
 
 // Item effect definitions
 const itemEffects = {
-    Donut: { type: 'heal', amount: 15 },
-    Lasagna: { type: 'heal', amount: 35 } // most of the variables are random for now until i get the exact amounts for each item, but the donut will heal 15 health and the lasagna will heal 35 health
+    Donut: 0,
+    Lasagna: 0 
 };
 const keyItemName = 'Key';
+
+// Function to check if player has an item
+function hasItem(itemName, quantity = 1) {
+    let item = inventory.find(i => i.name === itemName);
+    return item && item.quantity >= quantity;
+}
 
 // Function to add an item to inventory
 function addItem(itemName) {
@@ -28,10 +34,9 @@ function useItem(itemName) {
         return false;
     }
 
-    let effect = itemEffects[itemName];
-    if (effect && effect.type === 'heal') {
+    if (itemEffects[itemName]) {
         // Use heal function from health system
-        heal(effect.amount);
+        heal(itemEffects[itemName]);
         // Remove one item
         let itemIndex = inventory.findIndex(item => item.name === itemName);
         if (inventory[itemIndex].quantity > 1) {
@@ -65,5 +70,20 @@ function unlockThirdPath() {
 // Function to get inventory list
 function getInventory() {
     return inventory.slice(); // Return a copy
+}
+
+function resetInventory() {
+    inventory = [];
+}
+
+if (typeof module !== 'undefined' && module.exports) {
+    module.exports = {
+        inventory,
+        hasItem,
+        addItem,
+        useItem,
+        getInventory,
+        resetInventory,
+    };
 }
 
