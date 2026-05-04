@@ -1,6 +1,13 @@
 let inventory = [];
 
-const itemEffects = {
+let config = {};
+try {
+    config = require('./gameConfig.json');
+} catch (error) {
+    config = { itemEffects: { Donut: 2, Lasagna: 5 } };
+}
+
+const itemEffects = config.itemEffects || {
     Donut: 0,
     Lasagna: 0
 };

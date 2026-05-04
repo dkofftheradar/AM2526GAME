@@ -1,9 +1,25 @@
 // Brian's friendship system
-let brianFriendship = 0; 
-const MAX_FRIENDSHIP = 0;
-const MIN_FRIENDSHIP = 0;
-const BETRAY_THRESHOLD = 0; 
-const ALLY_THRESHOLD = 0;  
+let config = {};
+
+try {
+    config = require('./gameConfig.json');
+} catch (error) {
+    config = {
+        friendshipThresholds: {
+            MAX_FRIENDSHIP: 10,
+            MIN_FRIENDSHIP: 0,
+            BETRAY_THRESHOLD: 3,
+            ALLY_THRESHOLD: 8
+        },
+        playerStats: { startingFriendship: 0 }
+    };
+}
+
+let brianFriendship = config.playerStats?.startingFriendship || 0;
+const MAX_FRIENDSHIP = config.friendshipThresholds?.MAX_FRIENDSHIP || 10;
+const MIN_FRIENDSHIP = config.friendshipThresholds?.MIN_FRIENDSHIP || 0;
+const BETRAY_THRESHOLD = config.friendshipThresholds?.BETRAY_THRESHOLD || 3;
+const ALLY_THRESHOLD = config.friendshipThresholds?.ALLY_THRESHOLD || 8;
 
 // Function to increase Brian's friendship level
 function increaseFriendship(amount) {

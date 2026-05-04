@@ -1,0 +1,17 @@
+{
+  "playerStats": {
+    "maxHealth": 0,
+    "startingHealth": 0,
+    "startingFriendship": 0
+  },
+  "friendshipThresholds": {
+    "MAX_FRIENDSHIP": 0,
+    "MIN_FRIENDSHIP": 0,
+    "BETRAY_THRESHOLD": 0,
+    "ALLY_THRESHOLD": 0
+  },
+  "itemEffects": {
+    "Donut": 0,
+    "Lasagna": 0
+  }
+}
